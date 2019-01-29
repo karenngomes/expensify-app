@@ -18,7 +18,8 @@ export default (expenses, { text, sortyBy, startDate, endDate }) => {
     .sort((a, b) => {
       if (sortyBy === "date") {
         return a.createdAt < b.createdAt ? 1 : -1;
+      } else if (sortyBy === "amount") {
+        return a.amount < b.amount ? 1 : -1;
       }
-      return a.amount < b.amount ? 1 : -1;
     });
 };
