@@ -1,2 +1,2 @@
 # expensify-app
-A expense maganer app with react
+A expense manager app with react
