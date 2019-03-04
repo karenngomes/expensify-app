@@ -8,13 +8,13 @@ const ExpenseListItem = ({
   id,
   description,
   amount,
-  creadAt = 0,
+  createdAt,
   dispatch
 }) => (
   <div>
     <h3>{description}</h3>
     <p>
-      {amount} - {creadAt}
+      {amount} - {createdAt}
     </p>
     <button onClick={() => dispatch(removeExpense({ id }))}>Remove</button>
   </div>
