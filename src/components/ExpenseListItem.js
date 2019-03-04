@@ -1,13 +1,23 @@
 // Export a stateless functional component
 // description, amount, creadAt
 import React from "react";
+import { connect } from "react-redux";
+import { removeExpense } from "../actions/expenses";
 
-const ExpenseListItem = ({ description, amount, creadAt }) => (
+const ExpenseListItem = ({
+  id,
+  description,
+  amount,
+  creadAt = 0,
+  dispatch
+}) => (
   <div>
     <h3>{description}</h3>
-    <p>{amount}</p>
-    <p>{creadAt}</p>
+    <p>
+      {amount} - {creadAt}
+    </p>
+    <button onClick={() => dispatch(removeExpense({ id }))}>Remove</button>
   </div>
 );
 
-export default ExpenseListItem;
+export default connect()(ExpenseListItem);
