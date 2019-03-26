@@ -27,3 +27,12 @@ test("should setup set text filter action object with default values", () => {
     text: ""
   });
 });
+
+test("should setup set text filter action object with provided values", () => {
+  const action = setTextFilter("Rent");
+
+  expect(action).toEqual({
+    type: "SET_TEXT_FILTER",
+    text: "Rent"
+  });
+});
