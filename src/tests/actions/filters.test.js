@@ -9,3 +9,12 @@ test("should generate set start date action object", () => {
     startDate: moment(0)
   });
 });
+
+test("should generate set end date action object", () => {
+    const action = setEndDate(moment(0));
+  
+    expect(action).toEqual({
+      type: "SET_END_DATE",
+      endDate: moment(0)
+    });
+  });
