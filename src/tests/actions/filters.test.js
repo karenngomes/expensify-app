@@ -3,7 +3,8 @@ import {
   setStartDate,
   setEndDate,
   setTextFilter,
-  sortyByDate
+  sortyByDate,
+  sortyByAmount
 } from "../../actions/filters";
 
 test("should generate set start date action object", () => {
@@ -44,4 +45,8 @@ test("should generate set text filter action object with provided values", () =>
 
 test("should generate action object for sort by date", () => {
   expect(sortyByDate()).toEqual({ type: "SORT_BY_DATE" });
+});
+
+test("should generate action object for sort by amount", () => {
+  expect(sortyByAmount()).toEqual({ type: "SORT_BY_AMOUNT" });
 });
