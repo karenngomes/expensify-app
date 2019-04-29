@@ -34,7 +34,7 @@ test("should generate set text filter action object with default values", () => 
   });
 });
 
-test("should generate set text filter action object with provided values", () => {
+test("should generate set text filter action object with text value", () => {
   const action = setTextFilter("Rent");
 
   expect(action).toEqual({
