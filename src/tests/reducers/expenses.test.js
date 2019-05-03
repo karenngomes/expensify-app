@@ -26,3 +26,17 @@ test("should not remove expenses if id not found", () => {
 
   expect(state).toEqual(expenses);
 });
+
+test("should add an expense", () => {
+  const expense = {
+    id: "109",
+    description: "Laptop",
+    note: "",
+    amount: 450,
+    createdAt: 20000
+  };
+  const action = { type: "ADD_EXPENSE", expense };
+  const state = expensesReducer(expenses, action);
+
+  expect(state).toEqual([...expenses, expense]);
+});
