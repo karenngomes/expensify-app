@@ -11,3 +11,9 @@ test("should setup default filter values", () => {
     endDate: moment().endOf("month")
   });
 });
+
+test("should set sortBy to amount", () => {
+  const state = filtersReducer(undefined, { type: "SORT_BY_AMOUNT" });
+
+  expect(state.sortBy).toBe("amount");
+});
