@@ -38,3 +38,11 @@ test("should set text filter", () => {
 
   expect(state.text).toBe(text);
 });
+
+test("should set startDate filter", () => {
+  const startDate = moment();
+  const action = { type: "SET_START_DATE", startDate };
+  const state = filtersReducer(undefined, action);
+
+  expect(state.startDate).toEqual(startDate);
+});
